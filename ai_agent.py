@@ -14,13 +14,6 @@ load_dotenv()
 llm = ChatGroq(model="llama-3.3-70b-versatile",
                temperature=1.2)
 search_tool = TavilySearch(max_results=2)
-# search_tool = [TavilySearchResults(max_results=2)]
-
-
-
-
-
-
 
 def get_response(system_prompt, query):
 
@@ -28,7 +21,7 @@ def get_response(system_prompt, query):
     agent = create_agent(
     model=llm,
     tools=[search_tool],
-    system_prompt= system_prompt,
+    system_prompt= system_prompt
     
     )
 
