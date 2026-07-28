@@ -1,7 +1,4 @@
 from pydantic_settings import BaseSettings, SettingsConfigDict
-from pydantic import BaseModel
-from typing import List
-
 
 class Settings(BaseSettings):
     groq_api_key: str
@@ -17,11 +14,6 @@ class Settings(BaseSettings):
     )
 
 settings = Settings()
-
-# Setup Pydantic Model (Schema Validation)
-class RequestState(BaseModel):
-    system_prompt: str
-    messages: List[str]
 
 
 
