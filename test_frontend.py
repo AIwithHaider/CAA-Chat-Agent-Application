@@ -24,7 +24,7 @@ model = sl.selectbox(
 system_prompt = sl.text_area("Define your AI Agent", height=70, placeholder="Type your system prompt here...")
 user_query = sl.text_area("Enter your query", height=150, placeholder="Ask anything")
 
-API_URL = "http://127.0.0.1:9999/chat"
+API_URL = "http://127.0.0.1:8000/chat"
 
 if sl.button("Ask anything"):
     # Get response from the backend on frontend
@@ -34,7 +34,7 @@ if sl.button("Ask anything"):
             "provider": provider,
             "model": model,
             "system_prompt": system_prompt,
-            "messages": user_query
+            "messages": [user_query]
 }
 
         response = requests.post(API_URL, json=payload)
