@@ -2,7 +2,7 @@ from langchain_tavily import TavilySearch
 from dotenv import load_dotenv
 from langchain.agents import create_agent
 from langchain_core.messages.ai import AIMessage
-from backend.chatbot.models import llm
+from backend.chatbot.models import groq_llm
 load_dotenv()
 
 
@@ -15,7 +15,7 @@ def get_response(system_prompt, query):
 
     # create the agent
     agent = create_agent(
-    model=llm,
+    model=groq_llm,
     tools=[search_tool],
     system_prompt= system_prompt
     
