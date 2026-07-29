@@ -1,35 +1,16 @@
-# from langchain_groq import ChatGroq
-# from langchain_google_genai import ChatGoogleGenerativeAI
-# from langchain_mistralai import ChatMistralAI
-
-# from backend.config.settings import settings
-
-# # setup llms
-
-# # Groq
-# groq_llm = ChatGroq(model=settings.groq_model_name,
-#                temperature=settings.temperature,
-#                api_key=settings.groq_api_key
-#                )
-
-# # Mistral
-# gemini_llm = ChatMistralAI(model=settings.mistral_model_name,
-#                temperature=settings.temperature,
-#                api_key=settings.mistral_api_key
-#                )
-
-# # Gemini
-# mistral_llm = ChatGoogleGenerativeAI(model=settings.gemini_model_name,
-#                temperature=settings.temperature,
-#                api_key=settings.gemini_api_key
-#                )
+from backend.chatbot.providers import get_llm
+from backend.chatbot.prompts import  SYSTEM_PROMPT
+from backend.chatbot.agent import create_chat_agent
 
 
-# from backend.chatbot.providers import get_llm
-# import requests
 
-# provider = requests.provider
-# model = requests.model
+def get_response(system_prompt, query, provider, model):
 
-# llm = get_llm(provider, model)
+    llm = get_llm(provider, model)
+    
+    formatted_prompt = SYSTEM_PROMPT.format(
+    system_prompt = system_prompt
+)
+
+    return create_chat_agent(llm, formatted_prompt, query)
 

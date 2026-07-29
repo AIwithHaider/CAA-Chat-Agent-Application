@@ -1,6 +1,6 @@
 # We will define all the routes here, in this way our main.py remains clean
 from fastapi import APIRouter
-from backend.tools.search_tool import get_response
+from backend.chatbot.models import get_response
 from backend.api.schemas import RequestState
 
 
