@@ -3,8 +3,6 @@
 MODEL_REGISTRY = {
 
     "Groq": [
-        "llama-3.1-8b-instant",
-        "llama-3.3-70b-versatile",
         "openai/gpt-oss-120b",
         "openai/gpt-oss-20b"
     ],
@@ -17,9 +15,8 @@ MODEL_REGISTRY = {
     ],
 
     "MISTRAL": [
-        "mistral-ocr-latest",
+        "mistral-small-latest",
         "mistral-large-latest",
-        "mistral-medium-latest",
         "mistral-medium-latest"
 
     ]

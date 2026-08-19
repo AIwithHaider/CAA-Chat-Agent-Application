@@ -1,1 +1,21 @@
 .env
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+.venv/
+
+# Logs
+*.log
+
+# IDE
+.idea/
+.vscode/
+
+# Data
+data/
+
+# Compiled Python bytecode
+*.py[cod]

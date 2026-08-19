@@ -34,7 +34,7 @@ if sl.button("Ask anything"):
             "provider": provider,
             "model": model,
             "system_prompt": system_prompt,
-            "messages": user_query
+            "messages": [user_query]
 }
 
         response = requests.post(API_URL, json=payload)

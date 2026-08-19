@@ -112,7 +112,7 @@ CAA-Chat-Agent-Application/
    ```bash
    # Windows (PowerShell)
    python -m venv .venv
-   .\.venv\Scripts\Activate.ps1
+   .venv\Scripts\Activate.ps1
 
    # Linux/macOS
    python3 -m venv .venv
@@ -121,9 +121,8 @@ CAA-Chat-Agent-Application/
 
 3. **Install Required Packages**
    ```bash
-   pip install fastapi uvicorn streamlit langchain langgraph \
-               langchain-groq langchain-google-genai langchain-mistralai \
-               langchain-tavily pydantic-settings python-dotenv requests
+   pip install -r requirements.txt
+
    ```
 
 ---
@@ -178,7 +177,7 @@ Interactive API Documentation (Swagger UI) is available at: `http://127.0.0.1:99
 In a separate terminal window (with the virtual environment activated), start Streamlit:
 
 ```bash
-streamlit run frontend/front_end.py
+python -m streamlit run frontend/front_end.py
 ```
 
 The Streamlit interface will automatically open in your default browser at `http://localhost:8501`.
